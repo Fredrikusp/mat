@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Ingredient Recipe Finder</title>
+  <!-- Import TensorFlow.js and the pre‑trained MobileNet model. We use CDN links to keep everything client‑side and cost‑free. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Kitchen Ingredient Recipe Finder</h1>
+    <p>Upload a photo of your ingredients and get recipe suggestions using open data.</p>
+  </header>
+  <main>
+    <section id="upload-section">
+      <input type="file" id="imageUpload" accept="image/*" />
+      <div id="preview-container">
+        <img id="preview-image" alt="Your uploaded ingredient photo will appear here" />
+      </div>
+      <button id="analyzeBtn">Analyze Ingredients</button>
+    </section>
+    <section id="results-section">
+      <h2>Detected Ingredients &amp; Recipe Suggestions</h2>
+      <ul id="ingredient-list"></ul>
+      <div id="recipes"></div>
+    </section>
+  </main>
+  <footer>
+    <p>This tool uses a lightweight, pre‑trained image classification model to recognise common foods and TheMealDB API to look up recipes. It runs entirely in your browser – no servers or paid services required.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
